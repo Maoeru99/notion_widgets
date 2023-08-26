@@ -10,6 +10,42 @@
 			background-image: url(https://images.unsplash.com/photo-1477158340414-06e7a2c10ada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3wxMjQ0fHxlbnwwfHx8fHw%3D&w=1000&q=80);
 			background-size: 100%;
 		}
+
+		.form-popup {
+  			display: none;
+  			position: fixed;
+  			bottom: 0;
+  			right: 15px;
+  			border: 3px solid #f1f1f1;
+  			z-index: 9;
+		}
+
+		.form-container {
+  			max-width: 500px;
+  			padding: 10px;
+  			background-color: white;
+		}
+
+		.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
 		
 		.sun{
 			height: 120px;
@@ -310,14 +346,26 @@
 	
 	<div class="neptune-outline-1">
 		<div class="neptune">
-			<button onclick="neptuneFunction()">Nettuno</button>
+			<button onclick="openForm()">Nettuno</button>
 		</div>
+	</div>
+
+	<div class="form-popup" id="myForm">
+  		<form action="/action_page.php" class="form-container">
+    		<h1>Nettuno</h1>
+		<p>Test testo form nettuno</p>
+    		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  		</form>
 	</div>
 	
 	<script>
-		function neptuneFunction() {
-			location.replace("https://www.notion.so/Sistema-di-Gliese-ecea2b0527104a33b524f26da56fd36e?pvs=4");
-		}
+		function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
 	</script>
 	
 </body>

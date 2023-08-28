@@ -92,6 +92,11 @@
 		
 		.btn-planet{
 			color: white;
+			align="center"
+		}
+		
+		.btn-planet{
+			color: white;
 			background-color: transparent;
 			border-color: transparent;
 			font-family: system-ui;
@@ -415,9 +420,15 @@
 	</style>
 </head>
 <body>
-	<h1 align="center">SISTEMA SOLARE</h1>
-	<button class="btn-pause" id="stop" onclick="pause()">Pausa</button>
-	<button class="btn-pause" id="restart" onclick="restart()" hidden>Riparti</button>
+	<div>
+		<div style="display:inline-block;"><h1 align="left" style="color:white;">SISTEMA SOLARE</h1></div>
+		<div style="display:inline-block; vertical-align: super;">
+			<button class="btn-pause" id="stop" onclick="pause()">Pausa</button>
+			<button class="btn-pause" id="restart" onclick="restart()" hidden>Riparti</button>
+		</div>
+	</div>
+	
+	
 
 	<div class="sun"></div>
 	

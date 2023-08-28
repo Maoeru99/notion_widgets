@@ -27,25 +27,25 @@
 		}
 
 		.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
+			background-color: #04AA6D;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			margin-bottom:10px;
+			opacity: 0.8;
+		}
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+			background-color: red;
+		}
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+			opacity: 1;
+		}
 		
 		.sun{
 			height: 120px;
@@ -72,12 +72,25 @@
 			animation: orbit2 2s linear infinite;
 		}
 		
+		.sMercury {
+			height: 20px;
+			width: 20px;
+			background: #B7B8B9;
+			border-radius: 50%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #f9c05f;
+			left: 43%;
+			top: 42%;
+			transform: translate(-50%, -50%);
+			animation: orbit11 4000000000s linear infinite;
+		}
+		
 		@keyframes orbit2 {
 			from{transform:rotate(0deg)translateX(70px) rotate(0deg);}
 			to{transform:rotate(360deg)translateX(70px) rotate(-360deg);}
 		}
 		
-		button{
+		.btn-planet{
 			color: white;
 			background-color: transparent;
 			border-color: transparent;
@@ -85,6 +98,14 @@
 			position: absolute;
 			left: -62px;
 			top: -11px;
+		}
+		
+		.btn-stop{
+			color: white;
+			background-color: transparent;
+			border-color: transparent;
+			font-family: system-ui;
+			position: absolute;
 		}
 		
 		.mercury-outline,.venus-outline-1,.earth-outline-1,.mars-outline-1,.jupiter-outline-1,.saturn-outline-1,.uranus-outline-1,.neptune-outline-1{
@@ -115,6 +136,20 @@
 			animation: orbit3 10s linear infinite;
 		}
 		
+		.sVenus {
+			height: 40px;
+			width: 40px;
+			background: #8B7D82;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 40%;
+			top: 42%;
+			transform: translate(-50%, -50%);
+			animation: orbit3 4000000000s linear infinite;
+		}
+		
 		@keyframes orbit3 {
 			from{transform:rotate(0deg)translateX(100px) rotate(0deg);}
 			to{transform:rotate(360deg)translateX(100px) rotate(-360deg);}
@@ -137,6 +172,20 @@
 			top: 43%;
 			transform: translate(-50%, -50%);
 			animation: orbit4 20s linear infinite;
+		}
+		
+		.sEarth {
+			height: 50px;
+			width: 50px;
+			background: #2e3a92;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #2855d6;
+			left: 44%;
+			top: 43%;
+			transform: translate(-50%, -50%);
+			animation: orbit4 4000000000s linear infinite;
 		}
 		
 		@keyframes orbit4 {
@@ -190,6 +239,20 @@
 			animation: orbit6 30s linear infinite;
 		}
 		
+		.sMars {
+			height: 30px;
+			width: 30px;
+			background: red;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 46.5%;
+			top: 46.5%;
+			transform: translate(-50%, -50%);
+			animation: orbit6 4000000000s linear infinite;
+		}
+		
 		@keyframes orbit6 {
 			from{transform:rotate(0deg)translateX(185px) rotate(0deg);}
 			to{transform:rotate(360deg)translateX(185px) rotate(-360deg);}
@@ -214,6 +277,20 @@
 			animation: orbit7 60s linear infinite;
 		}
 		
+		.sJupiter {
+			height: 40px;
+			width: 40px;
+			background: orange;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #cac2b9;
+			left: 45%;
+			top: 45%;
+			transform: translate(-50%, -50%);
+			animation: orbit7 4000000000s linear infinite;
+		}
+		
 		@keyframes orbit7 {
 			from{transform:rotate(0deg)translateX(217px) rotate(0deg);}
 			to{transform:rotate(360deg)translateX(217px) rotate(-360deg);}
@@ -235,6 +312,19 @@
 			top: 45%;
 			transform: translate(-50%, -50%);
 			animation: orbit9 90s linear infinite;
+		}
+		
+		.sSaturn {
+			height: 50px;
+			width: 50px;
+			background: #ceb8b8;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			left: 45%;
+			top: 45%;
+			transform: translate(-50%, -50%);
+			animation: orbit9 4000000000s linear infinite;
 		}
 		
 		@keyframes orbit9 {
@@ -261,6 +351,20 @@
 			animation: orbit10 200s linear infinite;
 		}
 		
+		.sUranus {
+			height: 30px;
+			width: 30px;
+			background: #e1eeee;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #cac2b9;
+			left: 48%;
+			top: 48%;
+			transform: translate(-50%, -50%);
+			animation: orbit10 4000000000s linear infinite;
+		}
+		
 		@keyframes orbit10 {
 			from{transform:rotate(0deg)translateX(280px) rotate(0deg);}
 			to{transform:rotate(360deg)translateX(280px) rotate(-360deg);}
@@ -285,6 +389,20 @@
 			animation: orbit11 400s linear infinite;
 		}
 		
+		.sNeptune {
+			height: 30px;
+			width: 30px;
+			background: #5b5ddf;
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #cac2b9;
+			left: 48%;
+			top: 48%;
+			transform: translate(-50%, -50%);
+			animation: orbit11 4000000000s linear infinite;
+		}
+		
 		@keyframes orbit11 {
 			from{transform:rotate(0deg)translateX(310px) rotate(0deg);}
 			to{transform:rotate(360deg)translateX(310px) rotate(-360deg);}
@@ -297,75 +415,110 @@
 	</style>
 </head>
 <body>
+	<button class="btn-pause" id="stop" onclick="pause()">Pause</button>
+	<button class="btn-pause" id="restart" onclick="restart()" hidden>Restart</button>
+
 	<div class="sun"></div>
 	
 	<div class="mercury-outline">
-		<div class="mercury">
-			<p>Mercurio</p>
+		<div class="mercury" id="mercury">
+			<button class="btn-planet" onclick="openForm()">Mercurio</button>
 		</div>
 	</div>
 	
 	<div class="venus-outline-1">
-		<div class="venus">
-			<p>Venere</p>
+		<div class="venus" id="venus">
+			<button class="btn-planet" onclick="openForm()">Venere</button>
 		</div>
 	</div>
 	
 	<div class="earth-outline-1">
-		<div class="earth">
+		<div class="earth" id="earth">
 			<div class="earth-circle">
-				<div class="earth-inner"></div>
+				<div class="earth-inner">
+					<button class="btn-planet" onclick="openForm()">Luna</button>
+				</div>
 			</div>
-			<p>Terra</p>
+			<button class="btn-planet" onclick="openForm()">Terra</button>
 		</div>
 	</div>
 	
 	<div class="mars-outline-1">
-		<div class="mars">
-			<p>Marte</p>
+		<div class="mars" id="mars">
+			<button class="btn-planet" onclick="openForm()">Marte</button>
 		</div>
 	</div>
 	
 	<div class="jupiter-outline-1">
-		<div class="jupiter">
-			<p>Giove</p>
+		<div class="jupiter" id="jupiter">
+			<button class="btn-planet" onclick="openForm()">Giove</button>
 		</div>
 	</div>
 	
 	<div class="saturn-outline-1">
-		<div class="saturn">
-			<p>Saturno</p>
+		<div class="saturn" id="saturn">
+			<button class="btn-planet" onclick="openForm()">Saturno</button>
 		</div>
 	</div>
 	
 	<div class="uranus-outline-1">
-		<div class="uranus">
-			<p>Urano</p>
+		<div class="uranus" id="uranus">
+			<button class="btn-planet" onclick="openForm()">Urano</button>
 		</div>
 	</div>
 	
 	<div class="neptune-outline-1">
-		<div class="neptune">
-			<button onclick="openForm()">Nettuno</button>
+		<div class="neptune" id="neptune">
+			<button class="btn-planet" onclick="openForm()">Nettuno</button>
 		</div>
 	</div>
 
 	<div class="form-popup" id="myForm">
   		<form action="/action_page.php" class="form-container">
     		<h1>Nettuno</h1>
-		<p>Test testo form nettuno</p>
+			<p>Test testo form nettuno</p>
     		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   		</form>
 	</div>
 	
 	<script>
 		function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+			document.getElementById("myForm").style.display = "block";
+		}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
+		
+		function pause() {
+			var stop = document.getElementById("stop");
+			stop.hidden = true;
+			var restart = document.getElementById("restart");
+			restart.hidden = false;
+			document.getElementById("mercury").className = "sMercury";
+			document.getElementById("venus").className = "sVenus";
+			document.getElementById("earth").className = "sEarth";
+			document.getElementById("mars").className = "sMars";
+			document.getElementById("jupiter").className = "sJupiter";
+			document.getElementById("saturn").className = "sSaturn";
+			document.getElementById("uranus").className = "sUranus";
+			document.getElementById("neptune").className = "sNeptune";
+		}
+		
+		function restart() {
+			var restart = document.getElementById("restart");
+			restart.hidden = true;
+			var stop = document.getElementById("stop");
+			stop.hidden = false;
+			document.getElementById("mercury").className = "mercury";
+			document.getElementById("venus").className = "venus";
+			document.getElementById("earth").className = "earth";
+			document.getElementById("mars").className = "mars";
+			document.getElementById("jupiter").className = "jupiter";
+			document.getElementById("saturn").className = "saturn";
+			document.getElementById("uranus").className = "uranus";
+			document.getElementById("neptune").className = "neptune";
+		}
 	</script>
 	
 </body>

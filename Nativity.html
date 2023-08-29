@@ -1,0 +1,463 @@
+<!Doctype HTML>
+<html>
+<head>
+	<title>
+	</title>
+	<style>
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-image: url(https://images.unsplash.com/photo-1477158340414-06e7a2c10ada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3wxMjQ0fHxlbnwwfHx8fHw%3D&w=1000&q=80);
+			background-size: 100%;
+		}
+
+		.form-popup {
+  			display: none;
+  			position: fixed;
+  			bottom: 0;
+  			right: 15px;
+  			border: 3px solid #f1f1f1;
+  			z-index: 9;
+		}
+
+		.form-container {
+  			max-width: 500px;
+  			padding: 10px;
+  			background-color: white;
+		}
+
+		.form-container .btn {
+			background-color: #04AA6D;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			margin-bottom:10px;
+			opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+			background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+			opacity: 1;
+		}
+		
+		.sun{
+			height: 120px;
+			width: 120px;
+			background-image: url(https://www.transparentpng.com/thumb/black-hole/black-hole-png-23.png);
+			border-radius: 50%;
+			background-size: cover;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		.mercury {
+			height: 30px;
+			width: 30px;
+			background-image:url(https://www.fizzics.org/the-life-cycle-of-a-star/white-dwarf/);
+ 			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 40%;
+			top: 42%;
+			transform: translate(-50%, -50%);
+			animation: orbit2 1s linear infinite;
+		}
+		
+		.sMercury {
+			height: 30px;
+			width: 30px;
+			background-image:url(https://www.fizzics.org/the-life-cycle-of-a-star/white-dwarf/); 			
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 40%;
+			top: 42%;
+			transform: translate(-50%, -50%);
+			animation: orbit2 4000000000s linear infinite;
+		}
+		
+		@keyframes orbit2 {
+			from{transform:rotate(0deg)translateX(70px) rotate(0deg);}
+			to{transform:rotate(360deg)translateX(70px) rotate(-360deg);}
+		}
+		
+		.btn-planet{
+			color: white;
+			background-color: transparent;
+			border-color: transparent;
+			align="center"
+		}
+		
+		.btn-sun{
+			color: white;
+			background-color: transparent;
+			border-color: transparent;
+			font-family: system-ui;
+			position: absolute;
+			left: 35px;
+			top: 50px;
+		}
+		
+		.btn-planet{
+			color: white;
+			font-family: system-ui;
+			position: absolute;
+			left: -62px;
+			top: -11px;
+		}
+		
+		.btn-stop{
+			color: white;
+			background-color: transparent;
+			border-color: transparent;
+			font-family: system-ui;
+			position: absolute;
+		}
+		
+		.mercury-outline,.venus-outline-1,.earth-outline-1,.mars-outline-1,.jupiter-outline-1,.saturn-outline-1,.uranus-outline-1,.neptune-outline-1{
+			border-radius: 50%;
+			border: 1px dotted #ddd9;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		.mercury-outline{
+			height: 140px;
+			width: 140px; 
+		}
+		
+		.venus {
+			height: 30px;
+			width: 30px;
+			background-image:url(https://www.fizzics.org/the-life-cycle-of-a-star/white-dwarf/);
+ 			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 40%;
+			top: 42%;
+			transform: translate(-50%, -50%);
+			animation: orbit3 1s linear infinite;
+		}
+		
+		.sVenus {
+			height: 30px;
+			width: 30px;
+			background-image:url(https://www.fizzics.org/the-life-cycle-of-a-star/white-dwarf/);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 40%;
+			top: 42%;
+			transform: translate(-50%, -50%);
+			animation: orbit3 4000000000s linear infinite;
+		}
+		
+		@keyframes orbit3 {
+			from{transform:rotate(0deg)translateX(-70px) rotate(0deg);}
+			to{transform:rotate(360deg)translateX(-70px) rotate(-360deg);}
+		}
+		
+		.venus-outline-1{
+			height: 200px;
+			width: 200px; 
+		}
+		
+		.mars {
+			height: 30px;
+			width: 30px;
+			background: url(https://webstockreview.net/images/planet-clipart-water-15.png);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 46.5%;
+			top: 46.5%;
+			transform: translate(-50%, -50%);
+			animation: orbit6 20s linear infinite;
+		}
+		
+		.sMars {
+			height: 30px;
+			width: 30px;
+			background: url(https://webstockreview.net/images/planet-clipart-water-15.png);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 46.5%;
+			top: 46.5%;
+			transform: translate(-50%, -50%);
+			animation: orbit6 4000000000s linear infinite;
+		}
+		
+		@keyframes orbit6 {
+			from{transform:rotate(0deg)translateX(185px) rotate(0deg);}
+			to{transform:rotate(360deg)translateX(185px) rotate(-360deg);}
+		}
+		
+		.mars-outline-1{
+			height: 370px;
+			width: 370px; 
+		}
+		
+		.jupiter {
+			height: 30px;
+			width: 30px;
+			background: url(https://science4fun.info/wp-content/uploads/2020/01/Neutron-star.jpg);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 46.5%;
+			top: 46.5%;
+			transform: translate(-50%, -50%);
+			animation: orbit7 20s linear infinite;
+		}
+		
+		.sJupiter {
+			height: 30px;
+			width: 30px;
+			background: url(https://science4fun.info/wp-content/uploads/2020/01/Neutron-star.jpg);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #c1aa81;
+			left: 46.5%;
+			top: 46.5%;
+			transform: translate(-50%, -50%);
+			animation: orbit7 4000000000s linear infinite;
+		}
+		
+		@keyframes orbit7 {
+			from{transform:rotate(0deg)translateX(-185px) rotate(0deg);}
+			to{transform:rotate(360deg)translateX(-185px) rotate(-360deg);}
+		}
+		
+		.jupiter-outline-1{
+			height: 430px;
+			width: 430px; 
+		}
+		
+		.neptune {
+			height: 30px;
+			width: 30px;
+			background: url(https://p1.hiclipart.com/preview/892/496/939/solar-system-earth-planet-venus-exoplanet-space-images-uranus-planetary-mass-png-clipart.jpg);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #cac2b9;
+			left: 48%;
+			top: 48%;
+			transform: translate(-50%, -50%);
+			animation: orbit11 40s linear infinite;
+		}
+		
+		.sNeptune {
+			height: 30px;
+			width: 30px;
+			background: url(https://p1.hiclipart.com/preview/892/496/939/solar-system-earth-planet-venus-exoplanet-space-images-uranus-planetary-mass-png-clipart.jpg);
+			border-radius: 50%;
+			background-size: 100%;
+			position: absolute;
+			box-shadow: -4px 2px 56px #cac2b9;
+			left: 48%;
+			top: 48%;
+			transform: translate(-50%, -50%);
+			animation: orbit11 4000000000s linear infinite;
+		}
+		
+		@keyframes orbit11 {
+			from{transform:rotate(0deg)translateX(310px) rotate(0deg);}
+			to{transform:rotate(360deg)translateX(310px) rotate(-360deg);}
+		}
+		
+		.neptune-outline-1{
+			height: 620px;
+			width: 620px; 
+		}
+		
+		/* Style the tab */
+		.tab {
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+		}
+
+		/* Style the buttons that are used to open the tab content */
+		.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+			background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			padding: 6px 12px;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn-pause" id="stop" onclick="pause()">Pausa</button>
+	<button class="btn-pause" id="restart" onclick="restart()" hidden>Riparti</button>
+	<button class="btn-pause" id="datapads" onclick="openForm()">Datapads</button>
+	
+	
+
+	<div class="sun">
+		<button class="btn-sun">Jesus</button>
+	</div>
+	
+	<div class="mercury-outline">
+		<div class="mercury" id="mercury">
+			<button class="btn-planet">Melchior</button>
+		</div>
+	</div>
+	
+	<div class="mercury-outline">
+		<div class="venus" id="venus">
+			<button class="btn-planet">Caspar</button>
+		</div>
+	</div>
+	
+	<div class="mars-outline-1">
+		<div class="mars" id="mars">
+			<button class="btn-planet">Joseph</button>
+		</div>
+	</div>
+	
+	<div class="mars-outline-1">
+		<div class="jupiter" id="jupiter">
+			<button class="btn-planet">Balthazar</button>
+		</div>
+	</div>
+	
+	<div class="neptune-outline-1">
+		<div class="neptune" id="neptune">
+			<button class="btn-planet">Mary</button>
+		</div>
+	</div>
+
+	<div class="form-popup" id="myForm">
+  		<form action="/action_page.php" class="form-container">
+    		<div class="tab">
+				<button class="tablinks" onclick="openPlanet(event, 'Jesus')">Jesus</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Melchior')">Melchior & Caspar</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Balthazar')">Balthazar</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Joseph')">Joseph</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Mary')">Mary</button>
+			</div>
+			<div id="Jesus" class="tabcontent">
+				<h1 align="center">Jesus</h1>
+				<p>Jesus è il buco nero supermassiccio situato all'interno del sistema Nativity, nonchè centro del sistema, al quale tutto il resto orbita attorno. Una Mater Navis che dovesse avvicinarsi troppo al pozzo gravitazionale dell'oggetto celeste sarebbe irrimediabilmente attirata al suo interno senza speranza di fuga, velocità ultraluce compresa.</p>
+			</div>
+
+			<div id="Melchior" class="tabcontent">
+				<h1 align="center">Melchior & Caspar</h1>
+				<p>Melchior e Caspar sono due nane bianche che orbitano attorno a Jesus. Le interferenze generate dalle stelle e dal buco nero al quale orbitano intorno è tale da impedire l'uso di qualsiasi strumento di ricognizione conosciuto all'Impero Romano.</p>
+			</div>
+			<div id="Balthazar" class="tabcontent">
+				<h1 align="center">Balthazar</h1>
+				<p>Balthazar è una stella di neutroni, la più instabile delle tre che compongono il sistema di Nativity. I costanti pulsar bombardano Melchior e Caspar, per poi essere inghiottiti da Jesus, prima di scontrarsi contro Joseph, che trovandosi dal lato opposto del buco nero è risparmiato dal costante bombardamento di radiazioni.</p>
+			</div>
+			<div id="Joseph" class="tabcontent">
+				<h1 align="center">Joseph</h1>
+				<p>Joseph è uno dei due unici pianeti definiti abitabili dagli Ordo Diane della Classis Redemptor. Il pianeta è composto principalmente d'acqua e i moti ondosi altamente distruttivi (il pianeta è costantemente sottoposto a violente onde anomale dell'altezza di un chilometro, che potrebbero fare a pezzi navi più piccole di un Interceptor). Nonostante ciò una piccola porzione di pianeta è stata denominata come abitabile, un'oasi di calma che il manipolo Raiteva ha individuato all'interno di una cupola di energia dall'origine sconosciuta (presunta algoriana).</p>
+			</div>
+			<div id="Mary" class="tabcontent">
+				<h1 align="center">Mary</h1>
+				<p>Mary è il più esterno dei pianeti abitabili individuati dall'Ordo Diane all'interno del sistema Nativity. Il pianeta risulta come un'enorme pianeta forestale, anche se la maggior parte di esso è stato denominato come corrotto dal Deimos dalle investigazioni del manipolo Raiteva. Il manipolo ha riportato, inoltre, che come su Joseph è presente una cupola di energia la quale sembra proteggere il suo interno da corruzzioni del Deimos. L'interno della cupola si presenta come un'area piena di strane creature (Animusphere, secondo i rapporti degli strani datapad recuperati durante la prima spedizione sul pianeta) che possono assumere l'aspetto di qualunque cosa i soggetti all'interno dell'area abbiano visto. Si crede che venga stabilito un collegamento neurale tra creatura e soggetto all'interno del campo d'azione, rendendo la prima in grado di accedere a ogni ricordo degli ultimi.</p>
+			</div>
+    		<button type="button" class="btn cancel" onclick="closeForm('jesForm')">Close</button>
+  		</form>
+	</div>
+	
+	<script>		
+		function openForm() {
+			document.getElementById('myForm').style.display = "block";
+		}
+
+		function closeForm() {
+			document.getElementById('myForm').style.display = "none";
+		}
+		
+		function openPlanet(evt, planetName) {
+			evt.preventDefault();
+			// Declare all variables
+			var i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+
+			// Show the current tab, and add an "active" class to the button that opened the tab
+			document.getElementById(planetName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+		
+		function pause() {
+			var stop = document.getElementById("stop");
+			stop.hidden = true;
+			var restart = document.getElementById("restart");
+			restart.hidden = false;
+			document.getElementById("mercury").className = "sMercury";
+			document.getElementById("venus").className = "sVenus";
+			document.getElementById("mars").className = "sMars";
+			document.getElementById("jupiter").className = "sJupiter";
+			document.getElementById("neptune").className = "sNeptune";
+		}
+		
+		function restart() {
+			var restart = document.getElementById("restart");
+			restart.hidden = true;
+			var stop = document.getElementById("stop");
+			stop.hidden = false;
+			document.getElementById("mercury").className = "mercury";
+			document.getElementById("venus").className = "venus";
+			document.getElementById("mars").className = "mars";
+			document.getElementById("jupiter").className = "jupiter";
+			document.getElementById("neptune").className = "neptune";
+		}
+	</script>
+	
+</body>
+</html>

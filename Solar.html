@@ -123,7 +123,7 @@
 			position: absolute;
 		}
 		
-		.mercury-outline,.venus-outline-1,.earth-outline-1,.mars-outline-1,.saturn-outline-1,.uranus-outline-1,.neptune-outline-1{
+		.mercury-outline,.venus-outline-1,.earth-outline-1,.mars-outline-1,.jupiter-outline-1,.saturn-outline-1,.uranus-outline-1,.neptune-outline-1{
 			border-radius: 50%;
 			border: 1px dotted #ddd9;
 			position: absolute;
@@ -427,11 +427,48 @@
 			height: 620px;
 			width: 620px; 
 		}
+		
+		/* Style the tab */
+		.tab {
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+		}
+
+		/* Style the buttons that are used to open the tab content */
+		.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+			background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			padding: 6px 12px;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
 	</style>
 </head>
 <body>
 	<button class="btn-pause" id="stop" onclick="pause()">Pausa</button>
 	<button class="btn-pause" id="restart" onclick="restart()" hidden>Riparti</button>
+	<button class="btn-pause" id="datapads" onclick="openForm()">Datapads</button>
 	
 	
 
@@ -489,22 +526,90 @@
 			<button class="btn-planet" onclick="openForm()">Nettuno</button>
 		</div>
 	</div>
-
+	
 	<div class="form-popup" id="myForm">
   		<form action="/action_page.php" class="form-container">
-    		<h1>Nettuno</h1>
-			<p>Test testo form nettuno</p>
-    		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    		<div class="tab">
+				<button class="tablinks" onclick="openPlanet(event, 'Sole')">Sole</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Mercurio')">Mercurio</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Venere')">Venere</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Terra')">Terra</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Marte')">Marte</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Giove')">Giove</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Saturno')">Saturno</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Urano')">Urano</button>
+				<button class="tablinks" onclick="openPlanet(event, 'Nettuno')">Nettuno</button>
+			</div>
+			<div id="Sole" class="tabcontent">
+				<h1 align="center">Sole</h1>
+				<p>DATI MANCANTI.</p>
+			</div>
+
+			<div id="Mercurio" class="tabcontent">
+				<h1 align="center">Mercurio</h1>
+				<p>Mercurio è ormai ridotto ad un anello di asteroidi e polvere cosmica in orbita attorno alla sua stella, completamente smantellato e distrutto a causa dell'estrazione feroce di ematite, necessaria alla costruzione della Sphaera Dysonis, lo sciame di pannelli solari di dimensioni enormi che orbita intorno al Sole, e che ha permesso al genere umano di accedere al quantitativo di energia necessario per parificare il dislivello tecnologico con i Sserath.</p>
+			</div>
+			<div id="Venere" class="tabcontent">
+				<h1 align="center">Venere</h1>
+				<p>Venere inizia a essere colonizzato intorno al 1394 a.U.c. Nei secoli, Roma costruisce numerose Aerometropoli nell’atmosfera esterna di Venere, in grado di ospitare gradualmente migliaia di coloni. Qui, poco dopo al 2344 a.U.c., si ritira in un esilio volontario insieme ai suoi discepoli Iordanus Philippus Brunus, Filosofo dell’Ordo Minervae e monaco domenicano. Nelle tenebre delle aerometropoli di quel mondo eternamente in tempesta progetta e realizza i Fytodroni, che lo uccideranno. Nel 2397 a.U.c. (1644 A.D.) il Trono Oscuro Demogorgon si scaglia nell’atmosfera di Venere, per venire consumato e divorato in pochi istanti dalle tremende tempeste e dall’atmosfera caustica del pianeta. I motivi di questo epilogo restano un mistero, anche se in molti ipotizzano un collegamento con il virus informatico, Phaeton, che circa 350 anni dopo colpì i Fytodroni, nel 2742 a.U.c., cambiandoli per sempre. Ha una gravità pari al 90% di quella della Terra, la sua atmosfera è composta da anidride carbonica al 96% e ha una temperatura media di 450°C.</p>
+			</div>
+			<div id="Terra" class="tabcontent">
+				<h1 align="center">Terra</h1>
+				<p>DATI MANCANTI.</p>
+			</div>
+			<div id="Marte" class="tabcontent">
+				<h1 align="center">Marte</h1>
+				<p>Marte viene colonizzato intorno al 1521 a.U.c., con la prima base mineraria automatizzata per la futura colonizzazione. La fine del 2271 a.U.c. vede la fine dei Moti Protestanti e l’inizio di una vera e propria secolare trasformazione di Marte da polo esclusivamente minerario a mondo-carcere dove esiliare i dissidenti più pericolosi, senza sporcarsi del loro sangue con barbariche esecuzioni di massa. Il costante sfruttamento dei dissidenti esuli su Marte, per le campagne militari dei Cesari e degli Augusti della Terra, porta alla ribellione del 2529 a.U.c. (1776 A.D.) sotto gli ordini del carismatico discendente di esuli Georghius (George) Washington. Qui nel 2676 a.U.c. (1923 A.D.) viene esiliato Adolphus Hitler, dopo che ha tentato un colpo di stato ai danni del giovanissimo Kaiser Ottone. La sua ridotta gravità (pari a solo il 30% di quella terrestre) crea un ambiente inospitale, ma a differenza di Venere la terraformazione è avvenuta con successo.</p>
+			</div>
+			<div id="Giove" class="tabcontent">
+				<h1 align="center">Giove</h1>
+				<p>Giove ha perduto massa planetaria pari al 2,87%. Questo perché intorno al 2053 a.U.c. venne scelto per effettuare gli esperimenti necessari per la creazione del “Motore di Volta”, o come viene più comunemente chiamato Kugelblitum. 500 anni di esperimenti catastrofici falliti hanno compromesso in modo devastante la sua stabilità orbitale e la sua atmosfera. Nessuno dei suoi 69 satelliti naturali è sopravvissuto ai catastrofici errori dell’uomo.</p>
+			</div>
+			<div id="Saturno" class="tabcontent">
+				<h1 align="center">Saturno</h1>
+				<p>DATI MANCANTI.</p>
+			</div>
+			<div id="Urano" class="tabcontent">
+				<h1 align="center">Urano</h1>
+				<p>DATI MANCANTI.</p>
+			</div>
+			<div id="Nettuno" class="tabcontent">
+				<h1 align="center">Nettuno</h1>
+				<p>DATI MANCANTI.</p>
+			</div>
+    		<button type="button" class="btn cancel" onclick="closeForm('jesForm')">Close</button>
   		</form>
 	</div>
 	
 	<script>
 		function openForm() {
-			document.getElementById("myForm").style.display = "block";
+			document.getElementById('myForm').style.display = "block";
 		}
 
 		function closeForm() {
-			document.getElementById("myForm").style.display = "none";
+			document.getElementById('myForm').style.display = "none";
+		}
+		
+		function openPlanet(evt, planetName) {
+			evt.preventDefault();
+			// Declare all variables
+			var i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+
+			// Show the current tab, and add an "active" class to the button that opened the tab
+			document.getElementById(planetName).style.display = "block";
+			evt.currentTarget.className += " active";
 		}
 		
 		function pause() {
